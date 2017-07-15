@@ -1,0 +1,41 @@
+{
+  "name": "world-heritage-twitter-bot",
+  "description": "Twitter bot that presents randomly selected world heritage sites",
+  "version": "0.0.0",
+  "keywords": [
+    "unesco",
+    "world heritage",
+    "un",
+    "uno",
+    "twitter"
+    "bot"
+  ],
+  "author": "Julius Tens <mail@juliustens.de>",
+  "homepage": "https://github.com/juliuste/world-heritage-twitter-bot",
+  "repository": "juliuste/world-heritage-twitter-bot",
+  "bugs": "https://github.com/juliuste/world-heritage-twitter-bot/issues",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "sites.js",
+    "sites.json"
+  ],
+  "dependencies": {
+    "commons-photo-url": "^0.1.1",
+    "config": "^1.26.1",
+    "lodash.shuffle": "^4.2.0",
+    "node-remote-base64": "^0.1.2",
+    "twit": "^2.2.9",
+    "world-heritage": "0.0.0",
+    "world-heritage-image": "^0.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "export NODE_ENV=production && node index.js",
+    "build": "node sites.js > sites.json"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "license": "MIT"
+}

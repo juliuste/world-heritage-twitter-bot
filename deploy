@@ -1,0 +1,14 @@
+#!/bin/sh
+
+rsync -rav --delete \
+	--exclude '.*' \
+	--exclude node_modules \
+	. 'feinstaub-bot:~/world-heritage-twitter-bot/'
+
+ssh feinstaub-bot "\
+cd ~/world-heritage-twitter-bot
+npm i
+npm update
+forever stop world-heritage-twitter-bot
+export NODE_ENV=production
+forever start -a --uid world-heritage-twitter-bot index.js"
