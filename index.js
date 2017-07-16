@@ -4,8 +4,9 @@ const config = require('config')
 const twitterClient = require('twit')
 const base64 = require('node-remote-base64')
 const shuffle = require('lodash.shuffle')
+const moment = require('moment-timezone')
 
-let sites = require('./sites.json').filter((x) => !!x.site && x.site.length <= 70 && !!x.url)
+let sites = require('./sites.json').filter((x) => !!x.site && x.site.length <= 60 && !!x.url)
 
 const twitter = new twitterClient({
 	consumer_key: config.twitter.key,
@@ -19,7 +20,6 @@ let sendTweet
 
 if(config.debug){
 	sendTweet = (message, url, alt) => console.log(message, url, alt)
-	config.interval /= (24*60*60/2)
 }
 else{
 	sendTweet = (message, url, alt) => Promise.resolve().then(() => {
@@ -50,11 +50,15 @@ else{
 const post = () => {
 	const site = shuffle(sites)[0]
 
-	const text = `${site.site} ${site.url} (Photo: ${site.wikiImage})`
+	const text = `${site.site}${(!site.transBoundary && site.countries.names[0]) ? ', '+site.countries.names[0] : ''} ${site.url} (Photo: ${site.wikiImage})`
 	const url = site.wikiImage
 	const alt = site.site
 
 	sendTweet(text, url, alt)
 }
 
-setInterval(() => post(), config.requestInterval * 24*60*60*1000)
+setInterval(() => {
+	if(moment.tz('Europe/Berlin').isoWeekday() === config.postDay){
+		post()
+	}
+}, 24*60*60*1000)

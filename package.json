@@ -24,6 +24,7 @@
     "commons-photo-url": "^0.1.1",
     "config": "^1.26.1",
     "lodash.shuffle": "^4.2.0",
+    "moment-timezone": "^0.5.13",
     "node-remote-base64": "^0.1.2",
     "twit": "^2.2.9",
     "world-heritage": "0.0.0",

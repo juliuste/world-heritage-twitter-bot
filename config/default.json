@@ -5,6 +5,6 @@
 		"token": "X",
 		"token_secret": "X"
 	},
-	"interval": 7,
+	"postDay": 2,
 	"debug": false
 }
