@@ -1,13 +1,13 @@
 {
   "name": "world-heritage-twitter-bot",
   "description": "Twitter bot that presents randomly selected world heritage sites",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "keywords": [
     "unesco",
     "world heritage",
     "un",
     "uno",
-    "twitter"
+    "twitter",
     "bot"
   ],
   "author": "Julius Tens <mail@juliustens.de>",
