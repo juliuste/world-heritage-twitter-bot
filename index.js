@@ -57,9 +57,13 @@ const post = () => {
 	sendTweet(text, url, alt)
 }
 
-setInterval(() => {
+
+const check = () => {
 	const currentDay = moment.tz('Europe/Berlin').isoWeekday()
 	if(config.postDays.indexOf(currentDay)>=0){
 		post()
 	}
-}, 24*60*60*1000)
+}
+
+check()
+setInterval(() => check(), 24*60*60*1000)
