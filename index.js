@@ -58,7 +58,8 @@ const post = () => {
 }
 
 setInterval(() => {
-	if(moment.tz('Europe/Berlin').isoWeekday() === config.postDay){
+	const currentDay = moment.tz('Europe/Berlin').isoWeekday()
+	if(config.postDays.indexOf(currentDay)>=0){
 		post()
 	}
 }, 24*60*60*1000)
