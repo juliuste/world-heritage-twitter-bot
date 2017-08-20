@@ -3,9 +3,9 @@
 rsync -rav --delete \
 	--exclude '.*' \
 	--exclude node_modules \
-	. 'feinstaub-bot:~/world-heritage-twitter-bot/'
+	. 'enceladus:~/world-heritage-twitter-bot/'
 
-ssh feinstaub-bot "\
+ssh enceladus "\
 cd ~/world-heritage-twitter-bot
 npm i
 npm update
