@@ -3,12 +3,11 @@
 rsync -rav --delete \
 	--exclude '.*' \
 	--exclude node_modules \
-	. 'enceladus:~/world-heritage-twitter-bot/'
+	. 'europa:~/bots/world-heritage-twitter-bot/'
 
-ssh enceladus "\
+ssh europa "\
 cd ~/world-heritage-twitter-bot
 npm i
 npm update
-forever stop world-heritage-twitter-bot
-export NODE_ENV=production
-forever start -a --uid world-heritage-twitter-bot index.js"
+forever-service delete world-heritage-twitter-bot
+forever-service install world-heritage-twitter-bot -e 'NODE_ENV=production ENV=production' --start -s index.js"
