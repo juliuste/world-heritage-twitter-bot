@@ -2,11 +2,12 @@
 
 rsync -rav --delete \
 	--exclude '.*' \
+	--exclude 'sites.json' \
 	--exclude node_modules \
 	. 'europa:~/bots/world-heritage-twitter-bot/'
 
 ssh europa "\
-cd ~/world-heritage-twitter-bot
+cd ~/bots/world-heritage-twitter-bot
 npm i
 npm update
 forever-service delete world-heritage-twitter-bot
