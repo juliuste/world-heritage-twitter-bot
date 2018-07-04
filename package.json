@@ -1,7 +1,7 @@
 {
   "name": "world-heritage-twitter-bot",
   "description": "Twitter bot that presents randomly selected world heritage sites",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "keywords": [
     "unesco",
     "world heritage",
