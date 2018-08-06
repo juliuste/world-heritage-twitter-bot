@@ -10,5 +10,6 @@ ssh europa "\
 cd ~/bots/world-heritage-twitter-bot
 npm i
 npm update
+npm run build
 forever-service delete world-heritage-twitter-bot
 forever-service install world-heritage-twitter-bot -e 'NODE_ENV=production ENV=production' --start -s index.js"

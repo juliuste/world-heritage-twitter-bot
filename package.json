@@ -28,9 +28,8 @@
     "node-remote-base64": "^0.1.2",
     "twit": "^2.2.11",
     "world-heritage": "0.0.0",
-    "world-heritage-image": "^0.1.0"
+    "world-heritage-image": "^0.1.1"
   },
-  "devDependencies": {},
   "scripts": {
     "start": "export NODE_ENV=production && node index.js",
     "build": "node sites.js > sites.json"

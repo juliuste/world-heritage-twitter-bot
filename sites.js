@@ -15,4 +15,4 @@ const getSites = () =>
 		}))
 	)
 
-getSites().then((res) => {process.stdout.write(JSON.stringify(res))})
+getSites().then((res) => {process.stdout.write(JSON.stringify(res))}).catch(console.error)
