@@ -1,3 +1,5 @@
+# :warning: UNMAINTAINED / NO LONGER ACTIVE
+
 # world-heritage-twitter-bot
 
 [![dependency status](https://img.shields.io/david/juliuste/world-heritage-twitter-bot.svg)](https://david-dm.org/juliuste/world-heritage-twitter-bot)
